@@ -1,6 +1,7 @@
 package com.example.pass.repository.booking;
 
 import com.example.pass.repository.BaseEntity;
+import com.example.pass.repository.user.UserEntity;
 import lombok.Data;
 import lombok.ToString;
 
@@ -26,4 +27,8 @@ public class BookingEntity extends BaseEntity {
     private LocalDateTime startedAt;
     private LocalDateTime endedAt;
     private LocalDateTime cancelledAt;
+
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private UserEntity userEntity;
 }
